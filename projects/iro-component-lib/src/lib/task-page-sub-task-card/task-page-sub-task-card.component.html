@@ -1,0 +1,20 @@
+<!-- ------------------------------ Task Page Sub-Task Card ------------------------------------------- -->
+
+<div *ngIf="taskPageSubTaskCardId">
+    <div class="taskPageSubTaskCard pointer padding12" fxLayout="column" fxLayoutGap="20px"  >
+        <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <div style="color:#5F81F4">{{taskPageSubTaskCardId}}</div>
+            <div [ngClass]="{'dueDateYellow': taskPageSubTaskCardDateOrange == 'yes', 'dueDate': taskPageSubTaskCardDateOrange == 'no'}"> 
+                {{taskPageSubTaskCardDate}} 
+            </div>    
+        </div>
+
+        <div>{{taskPageSubTaskCardName}}</div>
+        
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="type"> {{taskPageSubTaskCardType}} </div>
+            <img class="taskPageSubTaskCard-avatar-image" [src]="taskPageSubTaskCardUserPhoto">
+        </div>
+
+    </div>                            
+</div>

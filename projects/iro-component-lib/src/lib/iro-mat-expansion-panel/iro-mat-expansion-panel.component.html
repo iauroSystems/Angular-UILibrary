@@ -1,0 +1,10 @@
+<mat-expansion-panel *ngIf="expansionList" style="width:300px;">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Expansion-panel
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p *ngFor="let expansion of expansionList" >
+        {{expansion}}
+    </p>
+</mat-expansion-panel>

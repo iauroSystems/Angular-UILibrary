@@ -1,0 +1,28 @@
+<!-- ------------------------------ quality reports ------------------------------------------- -->
+
+<div *ngIf="qualityTitle">
+    <div class="quality pointer " fxLayout="column" >
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <div style="font-weight: bold;font-size: 17px" class="padding20"> {{qualityTitle}} </div> 
+            <div class="info-icon info-tooltip" style="margin-right: 10px">
+                <div fxLayout="column" fxLayoutGap="7px" fxLayoutAlign="start start" class="info-tooltiptext tooltip-info-text">
+                    <div>81%-100% - Excellent</div> 
+                    <div>61%-80% - Very Good</div> 
+                    <div>41%-60% - Good</div> 
+                    <div>21%-40% - Satisfactory</div>
+                    <div>0%-20% - Poor</div>
+                </div>
+            </div>        
+        </div>
+
+        <div style="background-color: rgb(192, 189, 189);height: 0.5px;margin-bottom: 12px">  </div>
+        <div fxLayout="row" fxLayoutGap="20px" class="padding20">
+            <div class="image-contain-fit" [ngClass]="{'Reliability': qualityTitle == 'Reliability' , 'Security':qualityTitle == 'Security', 'Coverage': qualityTitle == 'Coverage', 'Maintainability': qualityTitle == 'Maintainability'}"></div>
+            <div fxLayout="column" fxLayoutGap="17px" >
+                <div style="font-size: 20px;font-weight: bold;color: #5F81F4"> {{qualityValue}} </div> 
+                <div style="font-size: 17px"> {{qualityStatus}} </div>         
+            </div>            
+        </div>
+    </div>                            
+</div>

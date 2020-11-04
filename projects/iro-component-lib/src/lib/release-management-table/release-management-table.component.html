@@ -1,0 +1,54 @@
+<!-- ------------------------------ Release Management Table------------------------------------------- -->
+
+<mat-table style="box-shadow: none !important;" [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container *ngFor="let column of displayedColumns;index as i" [matColumnDef]="column">
+        <mat-header-cell *matHeaderCellDef [ngClass]="{'environmetButtons': releaseManagementTableColumnList[i].type == 'buttons', 'featureWidth': releaseManagementTableColumnList[i].type == 'sub-feature'}"  > {{column}} </mat-header-cell>
+        <mat-cell *matCellDef="let element, let elementIndex = index " [ngClass]="{'environmetButtons': releaseManagementTableColumnList[i].type == 'buttons', 'featureWidth': releaseManagementTableColumnList[i].type == 'sub-feature'}" > 
+            
+        <div *ngIf="releaseManagementTableColumnList[i].type == 'text'"  > 
+            <div [ngStyle]="{'color':releaseManagementTableColumnList[i].color}" > <div style="color:#595959"> {{element[column]}} </div>  </div> 
+        </div> 
+
+        <div *ngIf="releaseManagementTableColumnList[i].type == 'sub-feature'" > 
+            <div  fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+                <div style="color:rgb(46, 148, 232)" > {{element[column]}} </div> 
+                <div class="subFeature" > {{element.subfeature}} </div> 
+            </div>
+        </div> 
+
+        <div *ngIf="releaseManagementTableColumnList[i].type == 'label'" > 
+            <div style="font-weight:500" [ngClass]="{'todo':element[column]=='To Do', 
+                            'in-progress':element[column]=='In Progress',  
+                            'in-review':element[column]=='In Review',   
+                            'done':element[column]=='Done'}" >  
+                {{element[column]}} 
+            </div>
+        </div> 
+
+        <div *ngIf="releaseManagementTableColumnList[i].type == 'Pipeline-Status'" > 
+            <div [ngClass]="{'success':element[column]=='Success', 
+                            'failure':element[column]=='Failure' || element[column]=='Aborted'}" >  
+                {{element[column].toUpperCase()}} 
+            </div>
+        </div> 
+
+        <div *ngIf="releaseManagementTableColumnList[i].type == 'buttons'"  > 
+            <div  fxLayout="column" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutGap="5px">
+                    <button style="height: 43px;font-size: 15px;color: white;" mat-button (click)="buttonClick('Development', elementIndex)" [disabled]="element['disabledButtons'].indexOf('Development') != -1" > Development </button>
+                    <button style="height: 43px;font-size: 15px;color: white;" mat-button (click)="buttonClick('Staging', elementIndex)" [disabled]="element['disabledButtons'].indexOf('Staging') != -1" > Staging </button>
+                </div>
+                <div  fxLayout="row" fxLayoutGap="5px">
+                    <button style="height: 43px;font-size: 15px;color: white;" mat-button (click)="buttonClick('Pre Production', elementIndex)" [disabled]="element['disabledButtons'].indexOf('Pre Production') != -1" > Pre Production </button>
+                    <button style="height: 43px;font-size: 15px;color: white;" mat-button (click)="buttonClick('Production', elementIndex)" [disabled]="element['disabledButtons'].indexOf('Production') != -1" > Production </button>    
+                </div>
+            </div> 
+        </div>
+
+
+        </mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row style="height: 130px;cursor: pointer;" *matRowDef="let row; columns:displayedColumns;" ></mat-row>    
+</mat-table>

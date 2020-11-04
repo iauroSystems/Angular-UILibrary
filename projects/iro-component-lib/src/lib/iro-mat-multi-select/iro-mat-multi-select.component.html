@@ -1,0 +1,12 @@
+<mat-select  *ngIf="multiSelectList" (selectionChange)="multiSelect($event.value)" 
+    placeholder="Years"
+    style="width:160px" 
+    name="year" 
+    class="mat-select-panel" 
+    [(ngModel)]="multiSelectedValue" 
+    multiple 
+    >
+    <mat-option *ngFor="let year of multiSelectList" [disabled]="year.disable == true"  [value]="year">
+        {{year.viewValue}}
+    </mat-option>
+</mat-select>

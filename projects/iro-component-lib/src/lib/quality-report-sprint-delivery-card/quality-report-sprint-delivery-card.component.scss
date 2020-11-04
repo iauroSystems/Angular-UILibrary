@@ -1,0 +1,72 @@
+//------------ QA Reports Summary Table -------------------------------
+
+.qualityReportSprintDeliveryCard{
+    width: 150px;
+    height: 120px;
+    background-color: white;
+    border-radius: 5px;
+}
+.Total-Sprints{
+  height: 38px;
+  width: 45px;
+  background-image: url(/assets/sprint_total.png);
+  background-size: contain; 
+}
+.Completed-Sprints{
+  height: 38px;
+  width: 45px;
+  background-image: url(/assets/sprint_completed_sprint.png);
+  background-size: contain; 
+}
+.Total-Features{
+  height: 38px;
+  width: 45px;
+  background-image: url(/assets/sprint_total_feature.png);
+  background-size: contain; 
+}
+.Completed-Features{
+  height: 38px;
+  width: 50px;
+  background-image: url(/assets/sprint_completed_feature.png);
+  background-size: contain; 
+}
+.Completed-Features-per{
+  height: 38px;
+  width: 55px;
+  background-image: url(/assets/sprint_completed_feature_per.png);
+  background-size: contain; 
+}
+.Total-User-Stories{
+  height: 38px;
+  width: 40px;
+  background-image: url(/assets/sprint_total_userstory.png);
+  background-size: contain; 
+}
+.Completed-US{
+  height: 38px;
+  width: 40px;
+  background-image: url(/assets/sprint_completed_userstory.png);
+  background-size: contain; 
+}
+.Completed-US-per{
+  height: 38px;
+  width: 40px;
+  background-image: url(/assets/sprint_completed_userstory_per.png);
+  background-size: contain; 
+}
+.image-contain-fit{
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.padding6{
+    padding: 6px;
+}
+  .padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  

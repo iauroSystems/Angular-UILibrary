@@ -1,0 +1,5 @@
+<mat-form-field appearance="{{appearance}}">
+  <mat-label>{{label}}</mat-label>
+  <input [(ngModel)]="value" matInput placeholder="{{placeholder}}" (ngModelChange)="inputChanged(value)" >
+  <mat-hint *ngIf="hint">{{hint}}</mat-hint>
+</mat-form-field>

@@ -1,0 +1,10 @@
+
+<div [ngStyle]="{'height':height, 'width':width, 'color':optionTextColor}">
+    <mat-label> {{label}} </mat-label>
+    <mat-select [disabled]="disabled" [ngStyle]="{'background-color':backgroundColor}" [ngClass]="{'mat-select-panel': isBorder == 'true'}" (selectionChange)="dropdownSelectedFun($event.value)" placeholder="{{placeHolder}}" >
+        <mat-option [ngStyle]="{'color':optionTextColor}" *ngFor="let option1 of dropdownList;index as i" [disabled]="i == disabledOption" [value]="option1">
+            {{option1}}
+        </mat-option>
+    </mat-select>
+</div>
+

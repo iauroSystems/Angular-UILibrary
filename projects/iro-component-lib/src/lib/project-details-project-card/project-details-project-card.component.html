@@ -1,0 +1,26 @@
+<!-- ------------------------------Project details project card------------------------------------------- -->
+
+<div *ngIf="projectDetailsProjectId" >
+    <div [ngStyle]="{'height':projectDetailsCardHeight, 'width':projectDetailsCardWidth, 'background-color':projectDetailsCardBackgroundColor, 'border-radius':projectDetailsBorderRadius}" class="padding12 marginbottom20" fxLayout="column" fxLayoutGap="8px" >
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div style="color: #5F81F4;font-size: 15px" >
+                {{projectDetailsProjectId}}
+            </div>
+            <div class="edit-icon pointer" (click)="editProjectDescription()"></div>
+        </div>
+
+        <div style="font-weight: bold;font-size: 15px" >
+            {{projectDetailsProjectName}}
+        </div>
+        <div style="font-size: 16px;color: #595959;height: 60px" >
+            {{projectDetailsDescription}}
+        </div>
+
+        <div style="border-top: 1px solid #DEDEDE;margin-top: 12px" fxLayout="row" fxLayoutAlign="space-between" >
+            <div></div>
+            <div style="padding-top:12px;">
+              <button mat-button style="color: #5F81F4;border: 2px solid #5F81F4;margin-left: 10px" (click)="openDeploymentURL()">Deployment URL</button>
+            </div>
+        </div>    
+    </div>                            
+</div>

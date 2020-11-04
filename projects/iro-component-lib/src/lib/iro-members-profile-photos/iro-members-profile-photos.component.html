@@ -1,0 +1,7 @@
+<!-- ------------------------------ Member profile photos------------------------------------------- -->
+
+<div *ngIf="membersList"  class="users-container1" >
+    <div *ngFor="let user of membersList" >
+        <img [ngClass]="{'selected-avatar-image' : users.indexOf(user) != -1, 'avatar-image1' : users.indexOf(user) == -1}" src={{user.url}} matTooltip={{user.name}} (click)="userSelected(user)" >
+    </div>
+</div>

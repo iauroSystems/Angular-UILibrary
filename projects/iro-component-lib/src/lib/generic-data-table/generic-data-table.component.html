@@ -1,0 +1,91 @@
+<!-- ------------------------------ generic table------------------------------------------- -->
+
+<div fxLayout="column"  >
+    <div style="background-color: white;" fxLayout="row" fxLayoutAlign="space-between center" >
+        <div></div>
+        <div>
+            <div *ngIf="manageColumns == 'true'"  class="manageColumn" (menuOpened)="manageColumnsMenuOpen()" [matMenuTriggerFor]="columnMenu">Manage Columns</div>
+            <mat-menu #columnMenu="matMenu">
+                <div style="height: 230px; position: relative;">
+                <div *ngFor="let item of temporaryColumnSelectionFeatureData" [disableRipple]='true' mat-menu-item (click)="$event.stopPropagation();" fxLayout="row" fxLayoutAlign="space-between center">
+                    <p fxFlex="100px" style="font-size: 17px;font-family: PoppinsRegular !important;">{{item.value}}</p>
+                    <mat-checkbox (change)="checkColumns()" [(ngModel)]="item.selected"></mat-checkbox>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="space-around center" style="background-color:white;position: sticky;bottom: 0;padding: 10px 20px;box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);">
+                    <div *ngIf="!allowedFeatureColumns" class="poppins-regular12">Please select at least one row</div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="40px">
+                    <div style="cursor: pointer;color: #4A4A4A;font-size: 14px;"> Cancel </div>
+                    <button (click)="applyColumnFilter()" mat-raised-button [disabled]="!allowedFeatureColumns" style="background-color: #5f81f4;color: white;font-size: 14px;">
+                        Add 
+                    </button>
+                    </div>
+                </div>
+                </div>
+            </mat-menu>        
+        </div>            
+    </div>
+
+    <mat-table style="box-shadow: none !important;" [dataSource]="dataSource" class="mat-elevation-z8 reports-container">
+        <ng-container *ngFor="let column of displayedColumns;index as i" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef   > {{column}} </mat-header-cell>
+            <mat-cell *matCellDef="let element; let elementIndex = index" (click)="genericTableRowSelected(elementIndex)" > 
+                
+            <div *ngIf="genericTableColumnList[i].type == 'text'"  > 
+                <div [ngStyle]="{'color':genericTableColumnList[i].color}"> {{element[column]}} </div> 
+            </div> 
+
+            <div *ngIf="genericTableColumnList[i].type == 'textWithDot'"  > 
+                <div fxLayout="row">
+                    <div class="dot" [ngStyle]="{'background-color':element.dotColor}" > </div>
+                    <div> {{element[column]}} </div> 
+                </div>
+            </div> 
+
+            
+            <div *ngIf="genericTableColumnList[i].type == 'label'" > 
+                <div style="height: 23px;border-radius: 4px;font-weight: 500;text-align: center;padding-left: 10px;padding-right: 10px;padding-top: 5px;" [ngStyle]="{'background-color': element.backgroundColor, 'color': element.color}"  >  
+                    {{element[column]}} 
+                </div>
+            </div> 
+
+            <div *ngIf="genericTableColumnList[i].type == 'sub-text'" > 
+                <div  fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+                    <div style="color:rgb(46, 148, 232)" > {{element[column]}} </div> 
+                    <div class="subText" > {{element.subText}} </div> 
+                </div>
+            </div> 
+
+            <div *ngIf="genericTableColumnList[i].type == 'image'" > 
+                <div  class="users-container-generic" >
+                    <div *ngFor="let user of element[column]" >
+                        <img class="avatar-image-generic" src={{user.url}} matTooltip={{user.name}}>
+                    </div>
+                </div>
+            </div> 
+
+            <div *ngIf="genericTableColumnList[i].type == 'statusTag'" > 
+                <div style="margin-left:-30px" fxLayout="row" fxLayoutAlign="start">
+                    <p class="statusChip" [ngClass]="{'statusChipRed':element.StatusTag=='RED','statusChipYellow':element.StatusTag=='AMBER','statusChipGreen':element.StatusTag=='GREEN'}">
+                    </p> 
+                </div>   
+            </div>         
+        </mat-cell>
+        
+        <mat-footer-cell *matFooterCellDef> 
+            <div *ngIf="grandTotal=='true'">
+                <div *ngIf="grandTotalColumn==i"> Grand Total </div>
+                <div *ngIf="grandTotalColumn<i" style="margin-left: 25px;"> {{calculateGrandTotal1(column)}} </div>                     
+            </div>            
+        </mat-footer-cell>
+
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="actualColumnsFeature"></mat-header-row>
+        <mat-row style="height: 70px;cursor: pointer;" *matRowDef="let row; columns:actualColumnsFeature;" ></mat-row>    
+        <mat-footer-row [ngClass]="{'footerRow': grandTotal=='true'}" *matFooterRowDef="actualColumnsFeature; sticky: true"></mat-footer-row>
+    </mat-table>
+    <div class="paginator-container">
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons #paginator ></mat-paginator>
+    </div>
+</div>    
+

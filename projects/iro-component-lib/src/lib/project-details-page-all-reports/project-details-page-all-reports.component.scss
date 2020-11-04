@@ -1,0 +1,69 @@
+.padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .padding20{
+    padding: 20px;
+  }
+  .padding30{
+    padding: 30px;
+  }
+  
+
+//-------------------------------------------
+
+.reports{
+    width: 270px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1.5px solid rgb(211, 210, 210);
+    margin-left: 10px;
+  }
+  .zapImage{
+    // height: 60px;
+     height: 53px;
+     width: 60px;
+     background-image: url(/assets/ZAP.png);
+     margin-top: 20px;
+     background-size: contain;
+   }
+   .sonarImage{
+     height: 80px;
+    //height: 53px;
+     width: 80px;
+     background-image: url(/assets/sonar.png);
+     background-size: contain;
+   }
+   .liquibaseImage{
+     //height: 90px;
+     margin-top: 20px;
+     height: 53px;
+     width: 60px;
+     background-size: contain;
+     background-image: url(/assets/liquibase.png); 
+   }
+   .rmmImage{
+     //height: 80px;
+     margin-top: 20px;
+     height: 53px;
+     width: 70px;
+     background-image: url(/assets/rmm.png); 
+     background-size: contain;
+   }
+   .trivyImage{
+    //height: 80px;
+    margin-top: 20px;
+    height: 53px;
+    width: 80px;
+    background-image: url(/assets/trivy.png);
+    background-size: contain; 
+  }
+  .image-contain-fit{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+    

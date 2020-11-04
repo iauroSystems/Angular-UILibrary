@@ -1,0 +1,6 @@
+
+<mat-button-toggle-group  color="primary" #group="matButtonToggleGroup" [(ngModel)]="selectedSection" (change)="onToggleValChange(group.value)">
+    <mat-button-toggle *ngFor="let country of toggleCountries" [ngClass]="{'view-notes-toggle-buttons toggle-buttons': toggleType == 'color'}"  value="{{country}}">
+      <span > {{country}} </span>
+    </mat-button-toggle>
+</mat-button-toggle-group>      

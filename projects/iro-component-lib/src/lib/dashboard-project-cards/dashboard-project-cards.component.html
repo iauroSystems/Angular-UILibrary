@@ -1,0 +1,34 @@
+<!-- ------------------------------Project card------------------------------------------- -->
+
+<div *ngIf="projectCardHeight" >
+    <div *ngIf="projectId" [ngStyle]="{'height':projectCardHeight, 'width':projectCardWidth, 'background-color':projectCardBackgroundColor, 'border-radius':projectCardBorderRadius}" class="pointer marginbottom20" fxLayout="column" >
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="padding10" >
+            <div style="color: #5F81F4;margin-top: 5px;font-size: 15px" class="poppins-semi12 pointer" >{{projectId}}</div>
+            <div style="margin-top: 5px;" class="dustbin-icon"></div>    
+        </div>
+
+        <div style="margin-left: 12px;font-weight: bold;font-size: 16px" >{{projectName}}</div> 
+
+        <div fxLayout="row" fxLayoutAlign="space-between center" style="padding-top:33px">
+
+            <div fxLayout="row" style="margin-left: 12px;">
+                <img *ngIf="profilePhotoUrl;else profile" [src]="profilePhotoUrl" alt="img" class="avatar-image">
+                <ng-template #profile>
+                    <div class="avatar-image-placeholder placeholder">{{ getInitial(dataLead)}}</div>
+                </ng-template>                    
+                <p style="color: #595959;padding-top: 5px;margin-left: 10px;font-size: 16px" > {{dataLead}} </p>   
+            </div>    
+            <div fxLayout="row" fxLayoutAlign="end" >
+                <p [ngClass]="{'statusChipRed': ragStatus=='RED','statusChipYellow': ragStatus=='AMBER','statusChipGreen': ragStatus=='GREEN', 'statusChipGrey': ragStatus=='GREY' }"></p>
+            </div>          
+        </div>               
+    </div>                            
+    <div *ngIf="createProject == 'true'" [ngStyle]="{'height':projectCardHeight, 'width':projectCardWidth, 'background-color':projectCardBackgroundColor, 'border-radius':projectCardBorderRadius}" class="pointer padding30 marginbottom20" fxLayout="column" >
+        <div fxFlex="90" fxLayout="row" fxLayoutAlign="space-between center">
+            <div style="font-size: 20px;font-weight: 500"> Create New </div>    
+            <div class="add-icon"></div>
+        </div>
+    </div>             
+    
+</div>

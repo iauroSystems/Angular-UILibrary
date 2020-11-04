@@ -1,0 +1,10 @@
+<!-- ------------------------------project details all reports------------------------------------------- -->
+
+<div *ngIf="reportName" >
+    <div class="reports pointer padding20" fxLayout="column" >
+        <div>
+            <div style="font-weight:bold;font-size: 20px"> {{reportName}} </div>
+        </div>
+        <div class="image-contain-fit" [ngClass]="{'zapImage': reportName == 'Security Report' , 'sonarImage':reportName == 'Code quality report', 'rmmImage': reportName == 'API Compliance Report', 'trivyImage': reportName == 'Container Security Report', 'liquibaseImage': reportName == 'Database Report'}"></div>
+    </div>                            
+</div>

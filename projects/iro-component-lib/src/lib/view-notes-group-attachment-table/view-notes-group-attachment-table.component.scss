@@ -1,0 +1,44 @@
+.mat-table {
+    width: 100%;
+    .mat-header-cell{
+      border-top: 1px solid #DEDEDE;
+      border-right: 1px solid #DEDEDE;
+      height: 45px;
+      text-align: center;
+      color: #9c9cc8;
+      font-size: 15px;
+    }
+    .mat-header-cell:last-child {
+      padding-right: 0;
+    }
+    .mat-cell:last-child {
+      padding-right: 0;
+    }
+}
+
+
+
+//-------------- view Notes Groups Attachment Table -----------------------------
+
+.combined{
+    background-image: url(/assets/CombinedShape.png);
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .download-blue-icon {
+    background-image: url(/assets/download.png);
+    height: 23px;
+    width: 23px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .rounded-profile-image{
+    border-radius: 50%;
+    height:35px;
+    width:35px;
+  }
+  

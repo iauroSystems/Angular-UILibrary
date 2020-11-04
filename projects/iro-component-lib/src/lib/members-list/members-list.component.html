@@ -1,0 +1,17 @@
+<!-- ------------------------------Members of List------------------------------------------- -->
+<br>
+<div *ngIf="memberName" >
+    <div fxLayout="row" fxLayoutGap="12px">
+        <ng-container *ngIf="memberProfilePhoto;else profile">
+            <img class="avatar-image" [src]="memberProfilePhoto">
+        </ng-container>
+        <ng-template #profile>
+            <div class="avatar-image-placeholder-members placeholder">{{ getInitial(memberName)}}</div>
+        </ng-template>                    
+
+        <div fxLayout="column" fxLayoutGap="4px">
+            <p style="font-weight: 500;font-size: 16px" >{{memberName}}</p>
+            <p style="color:#5F81F4;font-size: 15px;font-weight: 500">{{memberEmail}}</p>
+        </div>
+    </div>
+</div>

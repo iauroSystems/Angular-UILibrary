@@ -1,0 +1,33 @@
+
+.padding12{
+    padding: 12px;
+}
+
+//------------ Task Page sub-task Card -------------------------------
+
+.taskPageSubTaskCard{
+    width: 250px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .taskPageSubTaskCard-avatar-image{
+    border-radius: 50%;
+    height: 32px;
+  }
+  .dueDateYellow{
+    color: white;
+    background-color: #F7B64B;
+    padding:4px 8px;
+    border-radius: 4px;
+  }
+  .dueDate{
+    padding:4px 8px;
+  }
+    .type{
+    color: #236FED;
+    background-color: rgba(35, 111, 237,0.23);
+    padding:6px 8px;
+    border-radius: 4px;
+  }
+  

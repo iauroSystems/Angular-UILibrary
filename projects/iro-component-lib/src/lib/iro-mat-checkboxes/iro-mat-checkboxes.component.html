@@ -1,0 +1,4 @@
+
+<div *ngFor="let country of checkboxCountries;index as i" >
+    <mat-checkbox color="primary" [disabled]="i == disabledCheckboxNo" (change)="addToCheckedList($event.checked, country)"> {{country}} </mat-checkbox>
+</div>

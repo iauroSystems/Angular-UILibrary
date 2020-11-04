@@ -1,0 +1,93 @@
+//------------ QA Reports Summary Table -------------------------------
+
+.users-container{
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    max-width: 400px;
+    place-content: stretch;
+    align-items: unset;
+    padding-left: 5px;
+    .avatar-image{
+        border-radius: 50%;
+        height: 38px;
+        width: 38px;
+        border: 2px solid white;
+        margin-left: -5px;
+        cursor:pointer;
+    }
+  }
+  
+  
+.mat-row:nth-child(odd){
+    background-color:#f7f7f7;
+}
+::ng-deep .mat-footer-cell {
+    display:flex;
+    justify-content:center;
+  }
+  
+.mat-table {
+    width: 100%;
+    .mat-header-cell{
+      border-top: 1px solid #DEDEDE;
+      border-right: 1px solid #DEDEDE;
+      height: 45px;
+      text-align: center;
+      color: #9c9cc8;
+      font-size: 15px;
+    }
+    .mat-header-cell:last-child {
+      padding-right: 0;
+    }
+    .mat-cell:last-child {
+      padding-right: 0;
+    }
+    .rounded-image{
+        margin-left: -5px;
+        border-radius: 50%;
+        height:35px;
+        width:35px;
+    }    
+    .pass{
+        background-color: #cff5f2;
+        border-radius: 4px;
+        color: #00bfae;
+        height: 20px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-weight: 500;
+        font-weight: bold;    
+    }
+    .fail{
+        background-color: rgba(255,0,43,.16);
+        border-radius: 4px;
+        color: #ff002b;
+        height: 20px;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-weight: bold;    
+    }
+    .yellow{
+        background-color: #fbeee0;
+        border-radius: 3px;
+        color: #ef993e;
+        text-align: center;
+        height: 26px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;    
+        font-weight: bold;    
+    }
+    .environmetButtons{
+        min-width: 360px;
+    }
+    .featureWidth{
+        min-width: 170px;
+    }
+}
+

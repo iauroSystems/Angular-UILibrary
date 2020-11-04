@@ -1,0 +1,57 @@
+.padding7{
+    padding: 7px;
+  }
+  .padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .padding20{
+    padding: 20px;
+  }
+  .padding30{
+    padding: 30px;
+  }
+  
+//------------ Project details project manager card -------------------------------
+
+.border-bottom {
+    border-bottom: 1px solid #E6E6E6;
+  }
+  .default-profile-big {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .new-jira-icon{
+    background: url(/assets/jira-3.png) no-repeat;
+    height: 19px;
+    width: 19px;
+    background-size: contain;
+  }
+  .small-git-icon {
+    background: url(/assets/GitLab_Logo.png) no-repeat;
+    height: 18px;
+    width: 19px;
+    background-size: contain;
+  }
+  
+  .copy-icon{
+    background: url(/assets/copy.png) no-repeat;
+    height: 14px;
+    width: 15px;
+    background-size: contain;
+  }
+  .avatar-image-placeholder-manager-card{
+    height: 32px;
+    width: 47px;
+    background-color: #5F81F4;
+    text-align: center;  
+    padding-top: 14px;
+    color: white;
+    font-size: 17px;
+    
+  }
+  
+  

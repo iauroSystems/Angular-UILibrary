@@ -1,0 +1,23 @@
+
+<mat-form-field *ngIf="datePickerType == 'normal'">
+    <mat-label> {{datePickerLabel}} </mat-label>
+    <input matInput [matDatepicker]="picker" (dateInput)="onDateChange($event.value)" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field *ngIf="datePickerType == 'downArrow'">
+    <mat-label> {{datePickerLabel}} </mat-label>
+    <input matInput [matDatepicker]="picker1" (dateInput)="onDateChange($event.value)" >
+    <mat-datepicker-toggle   matSuffix [for]="picker1">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>    
+    <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field *ngIf="datePickerType == 'month-year'">
+    <mat-label> {{datePickerLabel}} </mat-label>
+    <input matInput [matDatepicker]="picker2" >
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2 (monthSelected)="picker2.close(); monthFilterSelected($event)" startView="multi-year"></mat-datepicker>
+</mat-form-field>

@@ -1,0 +1,31 @@
+<!-- ------------------------------ quality reports table------------------------------------------- -->
+
+<mat-table style="box-shadow: none !important;" [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container *ngFor="let column of displayedColumns;index as i" [matColumnDef]="column">
+        <mat-header-cell *matHeaderCellDef  class="jira-id poppins-medium14"> {{column}} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+
+        <div *ngIf="qualityReportsColumnList[i].type == 'text'" > 
+            <div [ngStyle]="{'color':qualityReportsColumnList[i].color}" > {{element[column]}} </div> 
+        </div> 
+
+        <div *ngIf="qualityReportsColumnList[i].type == 'status'" > 
+            <div style="margin-left:-30px" fxLayout="row" fxLayoutAlign="start">
+                <p class="statusChip" [ngClass]="{'statusChipRed':element.Status=='RED','statusChipYellow':element.Status=='AMBER','statusChipGreen':element.Status=='GREEN'}">
+                </p> 
+            </div>   
+        </div> 
+            
+        <div *ngIf="qualityReportsColumnList[i].type == 'sub-feature'" > 
+            <div  fxLayout="column" fxLayoutAlign="start">
+                <div style="color:#5F81F4" > {{element[column]}} </div> 
+                <div> {{element.subfeature}} </div> 
+            </div>
+        </div> 
+
+    </mat-cell>
+    </ng-container>
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row style="height: 80px;cursor: pointer;" *matRowDef="let row; columns:displayedColumns;" ></mat-row>    
+</mat-table>

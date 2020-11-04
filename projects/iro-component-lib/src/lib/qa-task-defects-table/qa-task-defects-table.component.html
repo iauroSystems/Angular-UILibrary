@@ -1,0 +1,34 @@
+<!-- ------------------------------ QA Task Defects Table------------------------------------------- -->
+<div style="height: 400px;position: relative;overflow-y: auto">
+
+    <mat-table style="box-shadow: none !important;" [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <ng-container *ngFor="let column of displayedColumns;index as i" [matColumnDef]="column">
+            <mat-header-cell *matHeaderCellDef   > {{column}} </mat-header-cell>
+            <mat-cell *matCellDef="let element; let elementIndex = index"  > 
+                
+            <div *ngIf="qaTasksDefectsTableColumnList[i].type == 'text'" matTooltip="{{element[column]}}" > 
+                <div [ngStyle]="{'color':qaTasksDefectsTableColumnList[i].color}" > 
+                    <div style="color:#595959;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"> 
+                        {{element[column]}} 
+                    </div>  
+                </div> 
+            </div> 
+
+            <div *ngIf="qaTasksDefectsTableColumnList[i].type == 'border-button'"  > 
+                <button mat-button class="border-button" > {{element[column]}} </button>
+            </div> 
+
+            <div *ngIf="qaTasksDefectsTableColumnList[i].type == 'attach'"  > 
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <div class="eye-icon pointer image-contain-fit" (click)="eyeAttachClicked('eye', elementIndex)"></div>
+                    <div class="attachment-icon pointer image-contain-fit" (click)="eyeAttachClicked('attach', elementIndex)"></div>
+                </div>
+            </div> 
+            
+            </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row style="height: 80px;cursor: pointer;" *matRowDef="let row; columns:displayedColumns;" ></mat-row>    
+    </mat-table>
+</div>

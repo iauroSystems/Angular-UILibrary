@@ -1,0 +1,14 @@
+<!-- ------------------------------observability cards------------------------------------------- -->
+
+<div *ngIf="observabilityTitle" >
+    <div class="observability pointer padding12" fxLayout="column" >
+        <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <div style="font-weight:500;font-size: 15px"> {{observabilityTitle}} </div>
+            <div class="edit-icon" ></div>    
+        </div>
+
+        <div fxFlex="75" fxLayout="row" fxLayoutAlign="center center">
+            <div class="image-contain-fit" [ngClass]="{'grafanaImage': observabilityTitle == 'Grafana' , 'prometheusImage':observabilityTitle == 'prometheus', 'kibanaImage': observabilityTitle == 'kibana', 'kialiImage': observabilityTitle == 'kiali'}"></div>
+        </div>
+    </div>                            
+</div>

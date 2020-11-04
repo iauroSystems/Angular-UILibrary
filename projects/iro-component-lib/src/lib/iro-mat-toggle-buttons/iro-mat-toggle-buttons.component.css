@@ -1,0 +1,12 @@
+.toggle-buttons{
+    width: 120px !important;
+    color: #5F81F4;
+    background-color: white;
+    border: none;
+  }
+  .mat-button-toggle-checked{
+    background-color:#5F81F4;
+    color: white;
+    border-radius: 3px;
+  }
+  

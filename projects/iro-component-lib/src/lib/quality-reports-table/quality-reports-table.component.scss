@@ -1,0 +1,54 @@
+::ng-deep .mat-header-cell {
+    display:flex;
+    justify-content:center;
+}
+::ng-deep .mat-cell {
+    display:flex;
+    justify-content:center;
+}
+
+.mat-table {
+    width: 100%;
+    .mat-header-cell{
+      padding-left:20px ;
+      border-top: 1px solid #DEDEDE;
+      border-right: 1px solid #DEDEDE;
+      height: 45px;
+      text-align: center;
+    }
+    .mat-header-cell:last-child {
+      padding-right: 0;
+    }
+    .mat-cell:last-child {
+      padding-right: 0;
+    }
+}
+
+
+//------------quality reports table-------------------------------
+
+.statusChip{
+    // color: white;
+    // padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #bdc0c5;
+    height: 20px;
+    width: 35px;
+    color: white;
+  }
+  .statusChipRed{
+    background-color: #FF3951;
+  }
+  .statusChipYellow{
+    background-color: #FFC369;
+  }
+  .statusChipGreen{
+    background-color: #54AD45;
+  }
+  .statusChipGrey{
+    background-color: #d5d8df;
+  }
+  .statusChipBlue{
+    background-color: #0052cc;
+  }
+  

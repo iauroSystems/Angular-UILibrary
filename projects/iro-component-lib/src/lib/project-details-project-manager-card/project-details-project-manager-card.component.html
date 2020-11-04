@@ -1,0 +1,58 @@
+<!-- ------------------------------Project details - project manager card------------------------------------------- -->
+
+<div *ngIf="projectDetailsProjectManagerCardName" >
+    <div class="padding10" style="background-color: white;border-radius:5px;width: 430px;margin-right: 10px;" fxLayout="column" >
+        <div class="border-bottom" fxLayout="column" fxLayoutGap="3px">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <p style="font-weight: bold"> Project Manager </p>
+            </div>
+            <div fxLayout="row" >
+                <div fxLayout="row" fxLayoutGap="7px" fxLayoutAlign="center center">
+                  <ng-container *ngIf="projectDetailsProjectManagerCardProfilePhoto; else noProfImage">
+                    <img class="default-profile-big" src={{projectDetailsProjectManagerCardProfilePhoto}} alt="img">
+                  </ng-container>
+                  <ng-template #noProfImage>
+                    <div class="default-profile-big  avatar-image-placeholder-manager-card placeholder">
+                      {{getInitial(projectDetailsProjectManagerCardName)}}
+                    </div>
+                  </ng-template>
+                  
+                  <div fxLayout="column" fxLayoutGap="3px" >
+                    <div style="font-weight: 500;"> {{projectDetailsProjectManagerCardName}} </div>
+                    <div style="color:#595959">{{projectDetailsProjectManagerCardEmail}}</div>
+                  </div>
+                </div>
+            </div>
+            <div fxLayout="row"  >
+                <div style="width:45px" ></div>
+                <div style="margin-bottom:5px;margin-top: 5px">
+                  <button mat-button style="text-align: center;color: #5F81F4;border: 1.2px solid #5F81F4;height: 28px;cursor:auto;" (click)="openDeploymentURL()">
+                    <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center center" style="margin-top:-5px;" >
+                      <div class="new-jira-icon"></div>
+                      <div class="poppins-semi12" style="width: 103px;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;" > Jira - {{projectDetailsProjectManagerCardJiraUsername}} </div>
+                      <div style="margin-top:3px;cursor: pointer;" class="copy-icon" (click)="$event.stopPropagation(); copyServiceKeyToClipBoard(projectDetailsProjectManagerCardJiraUsername)" ></div>
+                    </div>
+                  </button>
+                  <button mat-button style="color: #5F81F4;border: 1.2px solid #5F81F4;height: 28px;margin-left: 5px;cursor:auto;" (click)="openDeploymentURL()">
+                    <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center center" style="margin-top:-5px;" >
+                      <div class="small-git-icon"></div>
+                      <div class="poppins-semi12" style="width: 77px;
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;" > Git - {{projectDetailsProjectManagerCardGitUsername}} </div>
+                      <div style="margin-top:3px;cursor: pointer;" class="copy-icon" (click)="$event.stopPropagation(); copyServiceKeyToClipBoard(projectDetailsProjectManagerCardGitUsername)" ></div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div style="margin-top: 10px;" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div></div>
+            <button style="color: white;margin-right: 15px;background-color: #5F81F4;" mat-button color="primary" (click)="openJira()">Open Jira</button>
+          </div>
+
+    </div>
+</div>

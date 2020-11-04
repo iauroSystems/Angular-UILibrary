@@ -1,0 +1,53 @@
+.padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .padding20{
+    padding: 20px;
+  }
+  .padding30{
+    padding: 30px;
+  }
+
+  
+  .image-contain-fit{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+//------------heighLight-------------------------------
+
+.heighLight{
+    width: 260px;
+    height: 110px;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .totalTask{
+     height: 61px;
+     width: 61px;
+     background-image: url(/assets/highlight-total1.png);
+     background-size: contain;
+   }
+   .EH{
+    height: 61px;
+    width: 61px;
+    background-image: url(/assets/highlight-ehmiss.png);
+     background-size: contain;
+   }
+   .TaskCompleted{
+     height: 61px;
+     width: 61px;
+     background-size: contain;
+     background-image: url(/assets/highlight-tcompleted.png); 
+   }
+   .DueDate{
+     height: 61px;
+     width: 61px;
+     background-image: url(/assets/highlight-duepass.png); 
+     background-size: contain;
+   }
+    

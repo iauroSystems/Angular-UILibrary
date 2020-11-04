@@ -1,0 +1,35 @@
+<!-- ------------------------------Service card------------------------------------------- -->
+
+<div *ngIf="project_name" >
+  <div [ngStyle]="{'height':serviceCardHeight, 'width':serviceCardWidth, 'background-color':serviceCardBackgroundColor, 'border-radius':serviceCardBorderRadius}" class="pointer padding12 marginbottom20" fxLayout="column" >
+        <div fxLayout="row" fxLayoutGap="4px" >
+          <div class="copy-icon" ></div>    
+          <div style="color: #5F81F4;margin-top: 10px;font-weight: bold;font-size: 12px" class="poppins-semi12 pointer" >{{key}}</div>
+        </div>
+        <div style="margin-top: 3px;font-weight: bold;font-size: 16px" class="poppins-semi14">{{project_name}}</div> 
+        <div>
+          <button style="margin-top:10px;background-color: #5F81F428;color:#5F81F4;border-radius: 5px;height: 25px;" mat-button class="poppins-semi13"> 
+            <div style="margin-top:-5px">  {{project_type}} </div>   
+          </button>        
+        </div>
+        <p style="color: #595959;padding-top: 10px;" class="poppins-light14 two-line-text-overflow"> {{description}} </p>   
+  
+        <div style="border-top: 1px solid #DEDEDE;margin-top: 8px" fxLayout="row" fxLayoutAlign="space-between">
+          <div></div>
+          <div style="padding-top:10px;">        
+            <button *ngIf="jenkinsURL"  mat-button style="color: #354052;border: 1.5px solid #C2C2C2;" (click)="openjenkins()">
+              <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center center" >
+                <div style="margin-top: 5px;" class="jenkins-icon"></div>
+                <div style="color:#354052" > Jenkins </div>   
+              </div>
+            </button>
+            <button *ngIf="gitlabURL"  mat-button style="color: #354052;border: 1.5px solid #C2C2C2;margin-left: 10px" (click)="openGit()" >
+              <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center center" >
+                <div style="margin-top: 5px;" class="small-git-icon"></div>
+                <div style="color:#354052"> Gitlab </div>  
+              </div>                                            
+            </button>  
+          </div>
+        </div>
+    </div>                            
+  </div>

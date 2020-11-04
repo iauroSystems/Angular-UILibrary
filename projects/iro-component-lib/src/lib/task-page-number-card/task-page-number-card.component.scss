@@ -1,0 +1,26 @@
+//------------ Task Page Number Card -------------------------------
+
+.padding12{
+    padding: 12px;
+}
+.taskPageNumberCard{
+    width: 250px;
+    height: 65px;
+    background-color: white;
+    border-radius: 5px;
+    color: #5F81F4;
+  }
+  
+  .totalTaskCard{
+    min-height: 47px;
+    min-width: 58px;
+    border-radius: 5px;
+    background-color: rgba(147, 177, 237,0.16);
+    .tasknum{
+        text-align: center;
+        padding:13px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+  }
+  

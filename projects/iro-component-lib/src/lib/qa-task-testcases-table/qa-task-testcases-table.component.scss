@@ -1,0 +1,75 @@
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  
+  ::ng-deep .mat-header-cell {
+      display:flex;
+      justify-content:center;
+  }
+  
+  ::ng-deep .mat-cell {
+      display:flex;
+      justify-content:center;
+      // text-align: left;
+    }
+  .mat-table {
+      width: 100%;
+      .mat-header-cell{
+        // padding-left:20px ;
+        border-top: 1px solid #DEDEDE;
+        border-right: 1px solid #DEDEDE;
+        height: 45px;
+        text-align: center;
+        color: #9c9cc8;
+        font-size: 15px;
+      }
+      .mat-header-cell:last-child {
+        padding-right: 0;
+      }
+      .mat-cell:last-child {
+        padding-right: 0;
+      }  
+  }
+  
+//------------quality reports table-------------------------------
+
+.qaStatus {
+    border-radius: 4px;
+    padding-left: 3px;
+    margin: auto;
+  
+    mat-form-field {
+      width: 70px;
+      height: 40px;
+      margin-top: -10px;
+    }
+  }
+  
+  .qaStatusRed {
+    background-color: rgba(255, 0, 43,0.16);
+    color: #FF002B ;  
+  }
+  
+  .qaStatusGreen {
+    background-color: #cff5f2;
+    color: #00bfae;
+  }
+    
+  .qualityAssuranceStatusDropdown{
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      padding: 0 !important;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline,.mat-form-field-underline:active,.mat-form-field-underline:focus {
+      background-color: transparent;
+      padding: 0 !important;
+    }
+    .mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline{
+      display: none;
+      padding: 0 !important;
+    }
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+  }
+  

@@ -1,0 +1,43 @@
+.mat-table {
+    width: 100%;
+    .mat-header-cell{
+      border-top: 1px solid #DEDEDE;
+      border-right: 1px solid #DEDEDE;
+      height: 45px;
+      text-align: center;
+      color: #9c9cc8;
+      font-size: 15px;
+    }
+    .mat-header-cell:last-child {
+      padding-right: 0;
+    }
+    .mat-cell:last-child {
+      padding-right: 0;
+    }
+}
+
+//--------------QA task defect table-----------------------------
+
+.eye-icon {
+    background-image: url(/assets/eye-icon.png);
+    height: 22px;
+    width: 22px;
+    background-size: contain;
+  }
+  .attachment-icon {
+    background-image: url(/assets/attachment-icon.png);
+    height: 22px;
+    width: 22px;
+    background-size: contain;
+  }
+  .border-button{
+    color: #95a0b3;
+    border: 1px solid #c9c9c9;
+    cursor:pointer;
+  }
+  .image-contain-fit{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  

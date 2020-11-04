@@ -1,0 +1,8 @@
+
+<mat-radio-group [ngClass]="{'example-radio-group':isColumn == 'true'}">
+    <mat-radio-button class="example-radio-button" 
+        *ngFor="let country of countries" 
+        [value]="country" (change)="onRadioChange($event)" >
+        {{country}} 
+    </mat-radio-button>    
+</mat-radio-group>

@@ -1,0 +1,40 @@
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+  
+  ::ng-deep .mat-header-cell {
+      display:flex;
+      justify-content:center;
+  }
+  
+  ::ng-deep .mat-cell {
+      display:flex;
+      justify-content:center;
+      // text-align: left;
+    }
+    ::ng-deep .mat-footer-cell {
+      display:flex;
+      justify-content:center;
+    }
+    
+  .mat-table {
+      width: 100%;
+      .mat-header-cell{
+        // padding-left:20px ;
+        border-top: 1px solid #DEDEDE;
+        border-right: 1px solid #DEDEDE;
+        height: 45px;
+        text-align: center;
+        color: #9c9cc8;
+        font-size: 15px;
+      }
+      .mat-header-cell:last-child {
+        padding-right: 0;
+      }
+      .mat-cell:last-child {
+        padding-right: 0;
+      }  
+  }
+  .mat-row:nth-child(odd){
+    background-color:#f7f7f7;
+  }

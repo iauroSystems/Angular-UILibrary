@@ -1,0 +1,7 @@
+
+<div *ngIf="menuCountries" >
+    <button mat-button [matMenuTriggerFor]="menu"> {{menuTitle}} </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let country of menuCountries" (click)="menuCountryChange(country)" > {{country}} </button>
+    </mat-menu>
+</div>

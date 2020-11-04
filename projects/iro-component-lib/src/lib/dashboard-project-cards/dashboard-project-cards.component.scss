@@ -1,0 +1,91 @@
+.padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .padding20{
+    padding: 20px;
+  }
+  .padding30{
+    padding: 30px;
+  }
+  
+//-------------------------------------------
+
+.dustbin-icon{
+    background-image: url(/assets/dustbin.png);
+    height: 15px;
+    width: 15px;
+    background-size: contain;
+  }
+  .statusChipRed{
+    border-radius:25px 0 0 25px;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+    background-color: #FF3951;
+  }
+  .statusChipYellow{
+    border-radius:25px 0 0 25px;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+    background-color: #FFC369;
+  }
+  .statusChipGreen{
+    border-radius:25px 0 0 25px;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+    background-color: #54AD45;
+  }
+  .statusChipGrey{
+    border-radius:25px 0 0 25px;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+    background-color: #bdc0c5;
+  }  
+  .statusChip1{
+    border-radius:25px 0 0 25px;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+    background-color: white;
+  }
+  
+  .statusChip{
+    border-radius:25px 0 0 25px;
+    background-color: white;
+    height: 20px;
+    width: 35px;
+    margin-top: 8px;
+  }
+  .pointer{
+    cursor: pointer;
+  }
+  .avatar-image-placeholder{
+    border-radius: 50%;
+    height: 25px;
+    width: 30px;
+    background-color: #5F81F4;
+    text-align: center;  
+    color: white;
+    padding-top: 5px;
+  }
+  .add-icon {
+    background: url(/assets/add.png) no-repeat;
+    height: 33px;
+    width: 33px;
+    background-size: contain;
+  }
+  .avatar-image{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: #5F81F4;
+    text-align: center;  
+  }
+
+  

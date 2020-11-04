@@ -1,0 +1,10 @@
+
+<div *ngIf="progressSpinnerValue" >
+    <mat-progress-spinner
+        [color] = "circularProgressBarColor"
+        [title]="progressSpinnerTooltip"
+        [strokeWidth] = "progressSpinnerStrokeWidth"
+        [mode]="progressSpinnerMode"
+        [value]="progressSpinnerValue">
+    </mat-progress-spinner>
+</div>

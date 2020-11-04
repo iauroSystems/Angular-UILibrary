@@ -1,0 +1,27 @@
+<!-- ------------------------------project Details Document Upload Card------------------------------------------- -->
+
+<div *ngIf="projectDetailsDocumentUploadCardWorkFlow" >
+    <div class="workFlow pointer padding20" fxLayout="column" >
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+            <div style="text-align:center;">
+                <img class="img-clip" src="/assets/Group18.png">
+            </div>
+
+            <div fxLayout="column" fxLayoutGap="12px" >
+                <div fxLayout="row">
+                    <div style="font-weight:bold;font-size: 27px;color: #5F81F4"> {{projectDetailsDocumentUploadCardWorkFlow}} </div>
+                    <div style="color: #979494;font-size: 20px;font-weight: 500">  /{{projectDetailsDocumentUploadCardMaxWorkFlow}} </div>
+                </div>
+                <div style="font-size: 16px;font-weight: 500">  Documents Uploaded </div>                
+            </div>
+    
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between">
+            <div> </div>    
+            <div>
+                <button mat-button style="color: #5F81F4;border: 2px solid #5F81F4;margin-left: 10px" >Upload</button>
+            </div>
+        </div>
+    </div>                            
+</div>

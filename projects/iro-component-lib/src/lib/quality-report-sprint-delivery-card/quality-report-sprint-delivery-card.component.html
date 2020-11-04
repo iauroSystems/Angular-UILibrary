@@ -1,0 +1,15 @@
+<!-- ------------------------------ Quality Report Sprint Delivery Card ------------------------------------------- -->
+
+<div *ngIf="qualityReportSprintDeliveryCardTitle">
+    <div class="qualityReportSprintDeliveryCard pointer" fxLayout="column" >
+
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center" class="padding6" >
+            <div class="image-contain-fit" [ngClass]="{'Total-Sprints': qualityReportSprintDeliveryCardTitle == 'Total Sprints', 'Completed-Sprints': qualityReportSprintDeliveryCardTitle == 'Completed Sprints', 'Total-Features': qualityReportSprintDeliveryCardTitle == 'Total Features', 'Completed-Features': qualityReportSprintDeliveryCardTitle == 'Completed Features', 'Completed-Features-per': qualityReportSprintDeliveryCardTitle == 'Completed Features(%)', 'Total-User-Stories': qualityReportSprintDeliveryCardTitle == 'Total User Stories', 'Completed-US': qualityReportSprintDeliveryCardTitle == 'Completed US', 'Completed-US-per': qualityReportSprintDeliveryCardTitle == 'Completed US(%)'}"></div>
+            <div style="font-weight: bold;font-size: 12px"> {{qualityReportSprintDeliveryCardTitle}} </div>         
+        </div>
+
+        <div style="background-color: rgb(192, 189, 189);height: 0.5px;margin-bottom: 12px">  </div>
+        <div class="padding10" style="font-size: 26px;color: #5F81F4;font-weight: bold"> {{qualityReportSprintDeliveryCardValue}} </div>         
+    </div>                            
+</div>
+

@@ -1,0 +1,11 @@
+<!-- ------------------------------ heighLights ------------------------------------------- -->
+
+<div *ngIf="heighLightName">
+    <div class="heighLight pointer padding20" fxLayout="row" fxLayoutGap="22px" fxLayoutAlign="start center" >
+        <div class="image-contain-fit" [ngClass]="{'totalTask': heighLightName == 'Total Tasks' , 'EH':heighLightName == 'EH Missing', 'TaskCompleted': heighLightName == '% Task Completed', 'DueDate': heighLightName == '% Due Date Passed'}"></div>
+        <div fxLayout="column" fxLayoutGap="12px">
+            <div style="font-weight:bold;font-size: 30px;color: #5F81F4"> {{heighLightValue}} </div>
+            <div style="font-size: 14px"> {{heighLightName}} </div>
+        </div>    
+    </div>                            
+</div>

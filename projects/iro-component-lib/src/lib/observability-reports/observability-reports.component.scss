@@ -1,0 +1,57 @@
+.padding12{
+    padding: 12px;
+  }
+  .padding10{
+    padding: 10px;
+  }
+  .padding20{
+    padding: 20px;
+  }
+  .padding30{
+    padding: 30px;
+  }
+
+  //-------------------------------------------
+
+.observability{
+    width: 270px;
+    height: 140px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .edit-icon {
+    background: url(/assets/edit.png) no-repeat;
+    height: 15px;
+    width: 15px;
+    background-size: contain;
+  }
+  .grafanaImage{
+    height: 80px;
+    width: 100%;
+    background-image: url(/assets/grafana-logo.png);
+    background-size: contain;  
+  }
+  .prometheusImage{
+    height: 80px;
+    width: 100%;
+    background-image: url(/assets/prometheus.png);
+    background-size: contain;
+  }
+  .kibanaImage{
+    height: 40px;
+    width: 100%;
+    background-image: url(/assets/kibana.png);
+    background-size: contain;
+  }
+  .kialiImage{
+    height: 80px;
+    width: 100%;
+    background-image: url(/assets/kiali.png);
+    background-size: contain;
+  }
+  .image-contain-fit{
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  

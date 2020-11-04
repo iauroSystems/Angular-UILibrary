@@ -1,0 +1,53 @@
+<mat-table style="box-shadow: none !important;" [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container *ngFor="let column of columnList" [matColumnDef]="column.columnName">
+        <mat-header-cell *matHeaderCellDef  class="jira-id poppins-medium14"> {{column.columnName}} </mat-header-cell>
+        <mat-cell *matCellDef="let element; let elementIndex = index" (click)="taskSummaryRowSelected('row', elementIndex, column.imageType)"> 
+
+            <div *ngIf="column.type == 'text'" >                    
+                <div *ngIf="column.columnName != 'Due Date'; else due"  [ngStyle]="{'color':column.color}" > {{element[column.columnName]}} </div> 
+                <ng-template #due>
+                    <div fxLayout="row" fxLayoutGap="1px">
+                        <div [ngStyle]="{'color':column.color}" > {{element[column.columnName]}} </div> 
+                        <div *ngIf="element.orangeDotDueDate == 'yes'">
+                            <div class="dot"
+                            matTooltip="Indication that the task has crossed the due date and is still not complete"
+                            matTooltipPosition="above"> </div> 
+                        </div>                                      
+                    </div>
+                </ng-template>                                
+            </div> 
+            
+            <div *ngIf="column.type == 'image'" > 
+                <div *ngIf="element[column.columnName]!='';else profile">
+                    <img *ngIf="column.imageType == 'rounded'"  src={{element[column.columnName]}} class="rounded-image" >     
+                    <img *ngIf="column.imageType == 'normal'" src={{element[column.columnName]}} class="normal-image" (click)="actionButtonEvent('action', elementIndex)" >     
+                </div>
+                <ng-template #profile>
+                    <div class="image-placeholder-members-task" matTooltip="UnKnown">UK</div>
+                </ng-template>                                
+            </div> 
+
+            <div *ngIf="column.type == 'title-subtitle'" > 
+                <div fxLayout="column" fxLayoutGap="10px">
+                    <div class="summary-label" >{{element.issue_type}}</div>
+                    <div matTooltip="{{element.summary}}" style="width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;" > 
+                        {{element.summary}} 
+                    </div>
+                </div>
+            </div> 
+
+            <div *ngIf="column.type == 'label'" > 
+                <div [ngClass]="{'todo':element[column.columnName]=='To Do', 
+                                'in-progress':element[column.columnName]=='In Progress',  
+                                'in-review':element[column.columnName]=='In Review',   
+                                'done':element[column.columnName]=='Done'}" >  
+                    {{element[column.columnName].toUpperCase()}} 
+                </div>
+            </div> 
+                
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row style="height: 80px;cursor: pointer;" *matRowDef="let row; columns:displayedColumns;" ></mat-row>    
+</mat-table>
